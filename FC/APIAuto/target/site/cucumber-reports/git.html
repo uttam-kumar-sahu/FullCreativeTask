@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cucumber-JVM Html Reports - Tag: @git</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="bootstrap.min.js"></script>
+
+<script type="text/javascript" src="highcharts.js"></script>
+<script type="text/javascript" src="highcharts-3d.js"></script>
+
+<link rel="stylesheet" href="bootstrap.min.css" type="text/css"/>
+
+<link rel="stylesheet" href="reporting.css" type="text/css"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#tablesorter").tablesorter();
+});
+</script>
+
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber-jvm Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="feature-overview.html">Features</a></li>
+        <li role="presentation" ><a href="tag-overview.html">Tags</a></li>
+        <li role="presentation" ><a href="step-overview.html">Steps</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid" id="summary">
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Project</th>
+                          <th>Number</th>
+                        <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="info">
+            <td>DemoAPIAutomation</td>
+                          <td>42</td>
+                        <td>03 Jul 2023, 13:36</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" id="title">
+  <h2>Tag Report</h2>
+  </div>
+
+
+<div class="container-fluid" id="report-summary">
+  <table class="stats-table">
+    <thead>
+  <tr class="header">
+        <th></th>
+    <th id="stats-header-scenarios" colspan="3">Scenarios</th>
+    <th id="stats-header-steps" colspan="7">Steps</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <th id="stats-header-key">Tag</th>
+        <th id="stats-header-scenarios-total">Total</th>
+    <th id="stats-header-scenarios-passed">Passed</th>
+    <th id="stats-header-scenarios-failed">Failed</th>
+    <th id="stats-header-steps-total">Total</th>
+    <th id="stats-header-steps-passed"    class="passed">Passed</th>
+    <th id="stats-header-steps-failed"    class="failed">Failed</th>
+    <th id="stats-header-steps-skipped"   class="skipped">Skipped</th>
+    <th id="stats-header-steps-pending"   class="pending">Pending</th>
+    <th id="stats-header-steps-undefined" class="undefined">Undefined</th>
+    <th id="stats-header-steps-missing"   class="missing">Missing</th>
+    <th id="stats-header-duration">Duration</th>
+    <th id="stats-header-status">Status</th>
+  </tr>
+</thead>
+    <tr>
+      <td class="tagname"><a href="git.html">@git</a></td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>30</td>
+      <td>30</td>
+      <td >0</td>
+      <td >0</td>
+      <td >0</td>
+      <td >0</td>
+      <td >0</td>
+      <td class="duration-format">13s 727ms</td>
+      <td class="passed">Passed</td>
+    </tr>
+  </table>
+</div>
+
+<div class="container-fluid" id="report-details">
+      <a href="file-src-test-resources-features-DemoAPIAutomation-feature.html">View Feature File</a>
+    <div class="feature-tags"><a href="git.html">@git</a></div>
+    
+    <div class="passed"><span class="element-keyword">Scenario: </span><span class="element-name">Create a git repository for authenticated user</span></div>
+          <div class="passed"><span class="step-keyword">When  </span><span class="step-name">I try to create a repository with the following data and headers</span><span class="step-duration">02s 742ms</span></div>
+      <div class="passed"><div class="doc-string">{<br/>&nbsp;&quot;name&quot;:&quot;Hello-World&quot;,<br/>&nbsp;&quot;description&quot;:&quot;This&nbsp;is&nbsp;your&nbsp;first&nbsp;repo!&quot;,<br/>&nbsp;&quot;homepage&quot;:&quot;https://github.com&quot;,<br/>&nbsp;&quot;private&quot;:false,<br/>&nbsp;&quot;is_template&quot;:true<br/>}</div></div>
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">Then  </span><span class="step-name">the operation should be successful</span><span class="step-duration">035ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">And  </span><span class="step-name">should include the following values</span><span class="step-duration">281ms</span></div>
+      
+              <table class="arguments-table">
+                      <tr>
+                              <td>ssh_url</td>
+                              <td>git@github.com:uttam-kumar-sahu/Hello-World.git</td>
+                          </tr>
+                      <tr>
+                              <td>full_name</td>
+                              <td>uttam-kumar-sahu/Hello-World</td>
+                          </tr>
+                  </table>
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">And  </span><span class="step-name">I store the &quot;id&quot; of the response as &quot;ID&quot;</span><span class="step-duration">027ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">And  </span><span class="step-name">I try to get the repository with name &quot;Hello-World&quot; and Owner &quot;uttam-kumar-sahu&quot;</span><span class="step-duration">707ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">Then  </span><span class="step-name">the operation should be successful</span><span class="step-duration">000ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">And  </span><span class="step-name">The &quot;id&quot; of the response as string should be equal to the stored &quot;ID&quot;</span><span class="step-duration">012ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">And  </span><span class="step-name">should include the following values</span><span class="step-duration">019ms</span></div>
+      
+              <table class="arguments-table">
+                      <tr>
+                              <td>ssh_url</td>
+                              <td>git@github.com:uttam-kumar-sahu/Hello-World.git</td>
+                          </tr>
+                      <tr>
+                              <td>full_name</td>
+                              <td>uttam-kumar-sahu/Hello-World</td>
+                          </tr>
+                  </table>
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">When  </span><span class="step-name">I try to delete the repository with name &quot;Hello-World&quot; and Owner &quot;uttam-kumar-sahu&quot;</span><span class="step-duration">735ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">Then  </span><span class="step-name">the content must be deleted with 204 status code</span><span class="step-duration">000ms</span></div>
+      
+            <div></div>
+      <div></div>
+        
+    <br>
+      <a href="file-src-test-resources-features-DemoAPIAutomation-feature.html">View Feature File</a>
+    <div class="feature-tags"><a href="git.html">@git</a></div>
+    
+    <div class="passed"><span class="element-keyword">Scenario: </span><span class="element-name">Create a git repository for authenticated user, create 2 Issues and close the issues</span></div>
+          <div class="passed"><span class="step-keyword">When  </span><span class="step-name">I try to create a repository with the following data and headers</span><span class="step-duration">01s 219ms</span></div>
+      <div class="passed"><div class="doc-string">{<br/>&nbsp;&quot;name&quot;:&quot;Hello-World&quot;,<br/>&nbsp;&quot;description&quot;:&quot;This&nbsp;is&nbsp;your&nbsp;first&nbsp;repo!&quot;,<br/>&nbsp;&quot;homepage&quot;:&quot;https://github.com&quot;,<br/>&nbsp;&quot;private&quot;:false,<br/>&nbsp;&quot;is_template&quot;:true<br/>}</div></div>
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">Then  </span><span class="step-name">the operation should be successful</span><span class="step-duration">000ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">And  </span><span class="step-name">should include the following values</span><span class="step-duration">039ms</span></div>
+      
+              <table class="arguments-table">
+                      <tr>
+                              <td>ssh_url</td>
+                              <td>git@github.com:uttam-kumar-sahu/Hello-World.git</td>
+                          </tr>
+                      <tr>
+                              <td>full_name</td>
+                              <td>uttam-kumar-sahu/Hello-World</td>
+                          </tr>
+                  </table>
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">And  </span><span class="step-name">I store the &quot;id&quot; of the response as &quot;ID&quot;</span><span class="step-duration">010ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">And  </span><span class="step-name">I try to get the repository with name &quot;Hello-World&quot; and Owner &quot;uttam-kumar-sahu&quot;</span><span class="step-duration">01s 493ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">Then  </span><span class="step-name">the operation should be successful</span><span class="step-duration">000ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">And  </span><span class="step-name">The &quot;id&quot; of the response as string should be equal to the stored &quot;ID&quot;</span><span class="step-duration">013ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">And  </span><span class="step-name">should include the following values</span><span class="step-duration">027ms</span></div>
+      
+              <table class="arguments-table">
+                      <tr>
+                              <td>ssh_url</td>
+                              <td>git@github.com:uttam-kumar-sahu/Hello-World.git</td>
+                          </tr>
+                      <tr>
+                              <td>full_name</td>
+                              <td>uttam-kumar-sahu/Hello-World</td>
+                          </tr>
+                  </table>
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">When  </span><span class="step-name">I create an issue with repo name &quot;Hello-World&quot; and Owner &quot;uttam-kumar-sahu&quot; and the following body</span><span class="step-duration">02s 001ms</span></div>
+      <div class="passed"><div class="doc-string">{<br/>&nbsp;&nbsp;&quot;title&quot;:&quot;Found&nbsp;a&nbsp;bug&quot;,<br/>&nbsp;&nbsp;&quot;body&quot;:&quot;having&nbsp;a&nbsp;problem&nbsp;with&nbsp;this&quot;,<br/>&nbsp;&nbsp;&quot;assignees&quot;:[<br/>&nbsp;&nbsp;&nbsp;&quot;uttam-kumar-sahu&quot;<br/>&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&quot;labels&quot;:[<br/>&nbsp;&nbsp;&nbsp;&nbsp;&quot;bug&quot;<br/>&nbsp;&nbsp;]<br/>}</div></div>
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">Then  </span><span class="step-name">the operation should be successful</span><span class="step-duration">000ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">And  </span><span class="step-name">I create an issue with repo name &quot;Hello-World&quot; and Owner &quot;uttam-kumar-sahu&quot; and the following body</span><span class="step-duration">01s 390ms</span></div>
+      <div class="passed"><div class="doc-string">{<br/>&nbsp;&nbsp;&quot;title&quot;:&quot;Found&nbsp;a&nbsp;secong&nbsp;bug&quot;,<br/>&nbsp;&nbsp;&quot;body&quot;:&quot;having&nbsp;another&nbsp;problem&nbsp;with&nbsp;this&quot;,<br/>&nbsp;&nbsp;&quot;assignees&quot;:[<br/>&nbsp;&nbsp;&nbsp;&quot;uttam-kumar-sahu&quot;<br/>&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&quot;labels&quot;:[<br/>&nbsp;&nbsp;&nbsp;&nbsp;&quot;bug&quot;<br/>&nbsp;&nbsp;]<br/>}</div></div>
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">Then  </span><span class="step-name">the operation should be successful</span><span class="step-duration">000ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">When  </span><span class="step-name">I try to update an Issue with repo name &quot;Hello-World&quot; , Owner &quot;uttam-kumar-sahu&quot;, issue number 1 and the following body</span><span class="step-duration">01s 187ms</span></div>
+      <div class="passed"><div class="doc-string">{<br/>&nbsp;&nbsp;&quot;title&quot;:&quot;Found&nbsp;a&nbsp;bug&quot;,<br/>&nbsp;&nbsp;&quot;body&quot;:&quot;having&nbsp;a&nbsp;problem&nbsp;with&nbsp;this&quot;,<br/>&nbsp;&nbsp;&quot;assignees&quot;:[<br/>&nbsp;&nbsp;&nbsp;&quot;uttam-kumar-sahu&quot;<br/>&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&quot;state&quot;&nbsp;:&nbsp;&quot;close&quot;,<br/>&nbsp;&nbsp;&quot;labels&quot;:[<br/>&nbsp;&nbsp;&nbsp;&nbsp;&quot;bug&quot;<br/>&nbsp;&nbsp;]<br/>}</div></div>
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">Then  </span><span class="step-name">the operation should be successful</span><span class="step-duration">000ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">And  </span><span class="step-name">should include the following values</span><span class="step-duration">018ms</span></div>
+      
+              <table class="arguments-table">
+                      <tr>
+                              <td>state</td>
+                              <td>closed</td>
+                          </tr>
+                      <tr>
+                              <td>number</td>
+                              <td>1</td>
+                          </tr>
+                  </table>
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">And  </span><span class="step-name">I try to update an Issue with repo name &quot;Hello-World&quot; , Owner &quot;uttam-kumar-sahu&quot;, issue number 2 and the following body</span><span class="step-duration">01s 107ms</span></div>
+      <div class="passed"><div class="doc-string">{<br/>&nbsp;&nbsp;&quot;title&quot;:&quot;Found&nbsp;a&nbsp;secong&nbsp;bug&quot;,<br/>&nbsp;&nbsp;&quot;body&quot;:&quot;having&nbsp;another&nbsp;problem&nbsp;with&nbsp;this&quot;,<br/>&nbsp;&nbsp;&quot;assignees&quot;:[<br/>&nbsp;&nbsp;&nbsp;&quot;uttam-kumar-sahu&quot;<br/>&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&quot;state&quot;&nbsp;:&nbsp;&quot;close&quot;,<br/>&nbsp;&nbsp;&quot;labels&quot;:[<br/>&nbsp;&nbsp;&nbsp;&nbsp;&quot;bug&quot;<br/>&nbsp;&nbsp;]<br/>}</div></div>
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">Then  </span><span class="step-name">the operation should be successful</span><span class="step-duration">000ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">And  </span><span class="step-name">should include the following values</span><span class="step-duration">018ms</span></div>
+      
+              <table class="arguments-table">
+                      <tr>
+                              <td>state</td>
+                              <td>closed</td>
+                          </tr>
+                      <tr>
+                              <td>number</td>
+                              <td>2</td>
+                          </tr>
+                  </table>
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">When  </span><span class="step-name">I try to delete the repository with name &quot;Hello-World&quot; and Owner &quot;uttam-kumar-sahu&quot;</span><span class="step-duration">632ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">Then  </span><span class="step-name">the content must be deleted with 204 status code</span><span class="step-duration">000ms</span></div>
+      
+            <div></div>
+      <div></div>
+        
+    <br>
+  </div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+      <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+      <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Cucumber-JVM Reports</a>
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

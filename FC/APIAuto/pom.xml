@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>CucumberRestAssuredDemoAutomation</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>14</maven.compiler.source>
+        <maven.compiler.target>14</maven.compiler.target>
+        <logEndpoints>false</logEndpoints>
+        <awaitPollInterval>400</awaitPollInterval>
+        <cucumber.version>LATEST</cucumber.version>
+        <java.version>18</java.version>
+        <junit.version>LATEST</junit.version>
+    </properties>
+
+    <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>3.0.7</version>
+        </dependency>
+
+    </dependencies>
+
+    <!--Adding Profiles per environment-->
+    <profiles>
+        <profile>
+            <id>env-default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <property>
+                    <name>env</name>
+                    <value>QA</value>
+                </property>
+            </activation>
+            <properties>
+                <profile.env.dummyBaseport>80</profile.env.dummyBaseport>
+                <profile.env.dummyBaseURI>https://api.github.com</profile.env.dummyBaseURI>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>ch.fortysix</groupId>
+                        <artifactId>maven-postman-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>env-stage</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+                <property>
+                    <name>env</name>
+                    <value>STAGING</value>
+                </property>
+            </activation>
+            <properties>
+                <profile.env.dummyBaseport>80</profile.env.dummyBaseport>
+                <profile.env.dummyBaseURI>https://api.github.com</profile.env.dummyBaseURI>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>ch.fortysix</groupId>
+                        <artifactId>maven-postman-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <compilerArgument>-Werror</compilerArgument>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>2.0.0</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>DemoAPIAutomation</projectName>
+                            <outputDirectory>${project.build.directory}/site/cucumber-reports</outputDirectory>
+                            <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+                            <skippedFails>true</skippedFails>
+                            <enableFlashCharts>false</enableFlashCharts>
+                            <buildNumber>42</buildNumber>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.20</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <sys.demo.dummyBaseURI>${profile.env.dummyBaseURI}</sys.demo.dummyBaseURI>
+                        <sys.demo.dummyBasePort>${profile.env.dummyBaseport}</sys.demo.dummyBasePort>
+                    </systemPropertyVariables>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
